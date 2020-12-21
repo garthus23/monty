@@ -1,7 +1,7 @@
 #include "monty.h"
 
 
-int call_opcode(char *buff)
+int call_opcode(char **arr, unsigned int j)
 {
 	int i = 0;
 	char *cmp;
@@ -10,20 +10,12 @@ int call_opcode(char *buff)
  		{"push", push_func}, {NULL, NULL}};
 
 
-	cmp = malloc(sizeof(char) * strlen(buff));
-
-	for (i = 0; buff[i] != ' '; i++)
-	{
-		cmp[i] = buff[i];
-	}
-	cmp[i] = '\0';
-
 	while (cases[i].opcode)
 	{
-	/*	if (cmp == *(cases[i].opcode))
+		if (cmp == *(cases[i].opcode))
 		{
-			return (cases[i].f(buff));
-		}*/
+			return (cases[i].f(arr), j);
+		}
 		printf("%s\n", case[i].opcode);
 		i++;
 	}
