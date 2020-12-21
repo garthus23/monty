@@ -37,5 +37,8 @@ typedef struct instruction_s
 } instruction_t;
 
 int call_opcode(char *buff);
+void push_func(char *s);
+char **string_to_array(char **, char *);
+void free_arr(char **arr);
 
 #endif

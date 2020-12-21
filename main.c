@@ -1,34 +1,46 @@
 #include "monty.h"
 
 
-int main(char** argc, char** argv)
+int main(int argc, char** argv)
 {
-	int i;
+	int i, j;
 	char c;
-	char buf[256];
-	FILE *fptr;
+	char buff[256];
+	char **arr = NULL;
+	FILE *fptr = NULL;
 
-	if ((fptr = fopen(argv[1],"r")) != NULL)
+
+	j = 0;
+	if (argc == 2)
 	{
-		c = fgetc(fptr); 
-		while (c != EOF)
+		if ((fptr = fopen(argv[1],"r")) != NULL)
 		{
-			i = 0;
-			while (c != '\n')
+			arr = malloc(sizeof(char*) * 3);
+			for (i = 0; i < 3; i++) 
+    				arr[i] = NULL;
+			c = fgetc(fptr); 
+			while (c != EOF)
 			{
-				buf[i] = c;
+				i = 0;
+				while (c != '\n')
+				{
+					buff[i] = c;
+					c = fgetc(fptr);
+					i++;
+				}
+				buff[i] = '\0';
+				string_to_array(arr, buff);
+				printf("%s\n", arr[0]);
+				printf("%s\n", arr[1]);
 				c = fgetc(fptr);
-				i++;
 			}
-			buf[i] = '\0';
-			call_opcode(buf);
-			c = fgetc(fptr);
+			fclose(fptr); 
+			free_arr(arr);
 		}
-		fclose(fptr); 
-	}
-	else
-	{
-		printf("On arrive pas a ouvrir ton fichier\n");
-	}
+		else
+		{
+			printf("On arrive pas a ouvrir ton fichier\n");
+		}
+	}	
 	return (0);
 }
