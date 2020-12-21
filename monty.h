@@ -38,8 +38,8 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-int call_opcode(char **arr, unsigned int j);
-void push_func(char **arr, unsigned int j);
+int call_opcode(stack_t **h , unsigned int j);
+void push_func(stack_t **h, unsigned int j);
 char **string_to_array(char **arr, char *buff);
 void free_arr(char **arr);
 

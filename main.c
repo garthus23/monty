@@ -5,6 +5,7 @@ int main(int argc, char** argv)
 	int i, j;
 	char c;
 	char buff[256];
+	stack_t *h;
 	extern char **arr;
 	FILE *fptr = NULL;
 
@@ -30,9 +31,7 @@ int main(int argc, char** argv)
 				buff[i] = '\0';
 				j++;
 				string_to_array(arr, buff);
-				printf("%s", arr[0]);
-				printf("%s", arr[1]);
-//				call_opcode(arr, j);
+				call_opcode(&h, j);
 				c = fgetc(fptr);
 			}
 			fclose(fptr); 

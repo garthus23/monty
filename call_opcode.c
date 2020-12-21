@@ -1,10 +1,11 @@
 #include "monty.h"
 
 
-int call_opcode(char **arr, unsigned int j)
+int call_opcode(stack_t **h , unsigned int j)
 {
 	int i = 0;
-	char *cmp;
+	int k = 0;
+	extern char **arr;
 
 	instruction_t cases [] = {
  		{"push", push_func}, {NULL, NULL}};
@@ -12,11 +13,20 @@ int call_opcode(char **arr, unsigned int j)
 
 	while (cases[i].opcode)
 	{
-		if (cmp == *(cases[i].opcode))
+		while (*(cases[i].opcode) != '\0')
 		{
-			return (cases[i].f(arr), j);
+			if (arr[i][k] != *(cases[i].opcode))
+			{
+				break;
+			}
+//			printf("%c", *(cases[i].opcode));
+			k++;
+			cases[i].opcode++;
 		}
-		printf("%s\n", case[i].opcode);
+		if (arr[i][k] == *(cases[i].opcode))
+			cases[i].f(h, j);
+//			printf(" OK\n");
+		k = 0;
 		i++;
 	}
 	return (0);

@@ -1,8 +1,8 @@
 #include "monty.h"
 
 
-void push_func(char *s)
+void push_func(stack_t **h, unsigned int j)
 {
-	printf("%s\n", s);
+	puts("Ca marche du tonnerre");
 
 }
