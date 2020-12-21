@@ -21,7 +21,7 @@ int main(char** argc, char** argv)
 				i++;
 			}
 			buf[i] = '\0';
-			printf("%s\n", buf);
+			call_opcode(buf);
 			c = fgetc(fptr);
 		}
 		fclose(fptr); 
