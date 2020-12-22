@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 char **arr;
 
@@ -40,7 +41,9 @@ typedef struct instruction_s
 
 int call_opcode(stack_t **h , unsigned int j);
 void push_func(stack_t **h, unsigned int j);
+void pall_func(stack_t **h, unsigned int j);
 char **string_to_array(char **arr, char *buff);
 void free_arr(char **arr);
+void free_dlistint(stack_t *head);
 
 #endif

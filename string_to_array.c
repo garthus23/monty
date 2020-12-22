@@ -12,8 +12,10 @@ char **string_to_array(char **arr, char *buff)
 	while (token)
 	{
 		if (arr[i])
+		{
 			free(arr[i]);
-
+		}
+		
 		arr[i] = malloc(sizeof(char) * strlen(token)+100);
 		
 		if (i != 2)
