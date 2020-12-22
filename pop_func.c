@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * pop_func - remove the top element
+ * @h: a doubly linked list
+ * @j: a line number
+ * Return: Nothing
+**/
 
 void pop_func(stack_t **h, unsigned int j)
 {
@@ -21,5 +27,10 @@ void pop_func(stack_t **h, unsigned int j)
 			*h = NULL;
 		}
 
+	}
+	else
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack", j);
+		exit(EXIT_FAILURE);
 	}
 }

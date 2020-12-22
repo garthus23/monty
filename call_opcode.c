@@ -1,16 +1,23 @@
 #include "monty.h"
 
+char **arr;
 
-int call_opcode(stack_t **h , unsigned int j)
+/**
+ * call_opcode - call the right function from the line
+ * @h: a doubly linked list
+ * @j: a line in the file
+ * Return: 0 when it works
+**/
+
+int call_opcode(stack_t **h, unsigned int j)
 {
 	int i = 0;
 	int k = 0;
-	extern char **arr;
 
-	instruction_t cases [] = {
- 		{"push", push_func}, {"pall", pall_func}, {"swap", swap_func},
-		{"pint", pint_func}, {"pop", pop_func}, {"add", add_func}, 
-		{NULL, NULL}};
+	instruction_t cases[] = {
+		{"push", push_func}, {"pall", pall_func}, {"swap", swap_func},
+		{"pint", pint_func}, {"pop", pop_func}, {"add", add_func},
+		{"nop", nop_func}, {NULL, NULL}};
 
 	while (cases[i].opcode)
 	{

@@ -1,5 +1,12 @@
 #include "monty.h"
 
+/**
+ * string_to_array - Transform a string in array
+ * @arr: an array 2D
+ * @buff: a string
+ * Return: an array
+**/
+
 char **string_to_array(char **arr, char *buff)
 {
 	int i, j;
@@ -15,9 +22,7 @@ char **string_to_array(char **arr, char *buff)
 		{
 			free(arr[i]);
 		}
-		
-		arr[i] = malloc(sizeof(char) * strlen(token)+100);
-		
+		arr[i] = malloc(sizeof(char) * (strlen(token) + 100));
 		if (i != 2)
 		{
 			for (j = 0; token[j] != '\0'; j++)

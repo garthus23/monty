@@ -32,7 +32,6 @@ int push_int(void)
 
 void push_func(stack_t **h, unsigned int j)
 {
-	int i, digit = 1;
 	stack_t *new;
 
 	if (push_int() == 0)

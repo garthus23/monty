@@ -40,12 +40,15 @@ typedef struct instruction_s
 } instruction_t;
 
 int call_opcode(stack_t **h , unsigned int j);
+int push_int(void);
 void push_func(stack_t **h, unsigned int j);
 void pall_func(stack_t **h, unsigned int j);
 void swap_func(stack_t **h, unsigned int j);
 void pint_func(stack_t **h, unsigned int j);
 void pop_func(stack_t **h, unsigned int j);
 void add_func(stack_t **h, unsigned int j);
+void nop_func(stack_t **h, unsigned int j);
+int string_from_line(FILE *fptr, char **buff, char *c);
 char **string_to_array(char **arr, char *buff);
 void free_arr(char **arr);
 void free_dlistint(stack_t *head);
