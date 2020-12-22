@@ -42,6 +42,7 @@ typedef struct instruction_s
 int call_opcode(stack_t **h , unsigned int j);
 void push_func(stack_t **h, unsigned int j);
 void pall_func(stack_t **h, unsigned int j);
+void swap_func(stack_t **h, unsigned int j);
 void pint_func(stack_t **h, unsigned int j);
 void pop_func(stack_t **h, unsigned int j);
 char **string_to_array(char **arr, char *buff);
