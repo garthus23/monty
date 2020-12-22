@@ -15,6 +15,7 @@ void push_func(stack_t **h, unsigned int j)
 	if (*h != NULL)
 	{
 		new->next = *h;
+		(*h)->prev = new;
 	}
 	else
 	{

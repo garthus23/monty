@@ -9,6 +9,7 @@ int call_opcode(stack_t **h , unsigned int j)
 
 	instruction_t cases [] = {
  		{"push", push_func}, {"pall", pall_func},
+		{"pint", pint_func}, {"pop", pop_func},
 		{NULL, NULL}};
 
 	while (cases[i].opcode)
@@ -24,8 +25,6 @@ int call_opcode(stack_t **h , unsigned int j)
 		}
 		if (arr[0][k] == *(cases[i].opcode))
 			cases[i].f(h, j);
-//		printf("%c", *(cases[i].opcode));
-//		printf("%c\n", arr[i][k]);
 		k = 0;
 		i++;
 	}
