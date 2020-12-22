@@ -45,6 +45,7 @@ void pall_func(stack_t **h, unsigned int j);
 void swap_func(stack_t **h, unsigned int j);
 void pint_func(stack_t **h, unsigned int j);
 void pop_func(stack_t **h, unsigned int j);
+void add_func(stack_t **h, unsigned int j);
 char **string_to_array(char **arr, char *buff);
 void free_arr(char **arr);
 void free_dlistint(stack_t *head);

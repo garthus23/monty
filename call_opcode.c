@@ -9,7 +9,8 @@ int call_opcode(stack_t **h , unsigned int j)
 
 	instruction_t cases [] = {
  		{"push", push_func}, {"pall", pall_func}, {"swap", swap_func},
-		{"pint", pint_func}, {"pop", pop_func}, {NULL, NULL}};
+		{"pint", pint_func}, {"pop", pop_func}, {"add", add_func}, 
+		{NULL, NULL}};
 
 	while (cases[i].opcode)
 	{
