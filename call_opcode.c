@@ -16,7 +16,7 @@ int call_opcode(stack_t **h, unsigned int j, FILE *fptr)
 		{"push", push_func}, {"pall", pall_func}, {"swap", swap_func},
 		{"pint", pint_func}, {"pop", pop_func}, {"add", add_func},
 		{"nop", nop_func}, {"sub", sub_func}, {"div", div_func},
-		{"mul", mul_func}, {NULL, NULL}};
+		{"mul", mul_func}, {"mod", mod_func}, {NULL, NULL}};
 	if (arr[0][0] == '\0')
 	{
 		return (0);
