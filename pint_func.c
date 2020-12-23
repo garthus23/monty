@@ -15,7 +15,7 @@ void pint_func(stack_t **h, unsigned int j)
 	}
 	else
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty", j);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", j);
 		exit(EXIT_FAILURE);
 	}
 }
