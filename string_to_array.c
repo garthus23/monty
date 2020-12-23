@@ -37,12 +37,6 @@ char **string_to_array(char *buff, stack_t *h, int j, FILE *fptr)
 		i++;
 		token = strtok(NULL, delim);
 	}
-	if (push_int() == 0)
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", j);
-		free_all(buff, arr, h);
-		fclose(fptr);
-		exit(EXIT_FAILURE);
-	}
+	push_int(buff, h, j, fptr);
 	return (arr);
 }
