@@ -1,6 +1,20 @@
 #include "monty.h"
 
 /**
+ * clean_array - reset array values
+ * Return: 0 on succeed
+**/
+
+int clean_array(void)
+{
+	if (arr[0])
+		arr[0][0] = '\0';
+	if (arr[1])
+		arr[1][0] = '\0';
+	return (0);
+}
+
+/**
  * continue_process - function used to continue
  * @argv: a file
  * @buff: a string, line of a file
@@ -33,8 +47,7 @@ int continue_process(char **argv, char **buff)
 			string_to_array(*buff, h, j, fptr);
 			call_opcode(&h, j, fptr);
 			c = fgetc(fptr);
-			arr[0][0] = '\0';
-			arr[1][0] = '\0';
+			clean_array();
 		}
 		fclose(fptr);
 		free_all(arr, h);
