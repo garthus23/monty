@@ -1,7 +1,5 @@
 #include "monty.h"
 
-char **arr;
-
 /**
  * call_opcode - call the right function from the line
  * @h: a doubly linked list

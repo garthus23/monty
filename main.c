@@ -1,7 +1,5 @@
 #include "monty.h"
 
-char **arr;
-
 /**
  * main - manipulate the stacks
  * @argc: number of args

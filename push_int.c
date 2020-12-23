@@ -1,12 +1,9 @@
 #include "monty.h"
 
-char **arr;
-
 /**
  * push_int - verify if there is a number to add
  * Return: 1 when there is one
 **/
-
 int push_int(void)
 {
 	int i = 0;

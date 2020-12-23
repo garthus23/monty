@@ -1,7 +1,5 @@
 #include "monty.h"
 
-char **arr;
-
 /**
  * push_func - add an int to the head
  * @h: a double linked list
