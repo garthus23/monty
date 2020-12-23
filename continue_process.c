@@ -30,7 +30,7 @@ int continue_process(char **argv, char **buff)
 		{
 			string_from_line(fptr, buff, &c);
 			j++;
-			string_to_array(arr, *buff, h, j, fptr);
+			string_to_array(*buff, h, j, fptr);
 			call_opcode(&h, j);
 			c = fgetc(fptr);
 			arr[0][0] = '\0';

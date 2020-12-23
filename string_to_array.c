@@ -2,7 +2,6 @@
 
 /**
  * string_to_array - Transform a string in array
- * @arr: an array 2D
  * @buff: a string
  * @h: a doubly linked list
  * @j: line of the opened file
