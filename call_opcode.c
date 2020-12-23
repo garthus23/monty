@@ -19,9 +19,10 @@ int call_opcode(stack_t **h, unsigned int j)
 		{"pint", pint_func}, {"pop", pop_func}, {"add", add_func},
 		{"nop", nop_func}, {NULL, NULL}};
 
-	if (arr[0][k] == '\0')
+	if (arr[0][0] == '\0')
+	{
 		return (0);
-
+	}
 	while (cases[i].opcode)
 	{
 		while (*(cases[i].opcode) != '\0')

@@ -74,6 +74,7 @@ int continue_process(char **argv, char **buff)
 			string_to_array(arr, *buff);
 			call_opcode(&h, j);
 			c = fgetc(fptr);
+			arr[0][0] = '\0';
 		}
 		fclose(fptr);
 		free_all(*buff, arr, h);

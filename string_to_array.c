@@ -9,11 +9,9 @@
 
 char **string_to_array(char **arr, char *buff)
 {
-	int i, j;
+	int i = 0, j;
 	const char *delim = " \t\r\n\v\f";
 	char *token = NULL;
-
-	i = 0;
 
 	token = strtok(buff, delim);
 	while (token)
@@ -23,6 +21,11 @@ char **string_to_array(char **arr, char *buff)
 			free(arr[i]);
 		}
 		arr[i] = malloc(sizeof(char) * (strlen(token) + 100));
+		if (!arr[i])
+		{
+			fprintf(stderr, "Error: malloc failed");
+			exit(EXIT_FAILURE);
+		}
 		if (i != 2)
 		{
 			for (j = 0; token[j] != '\0'; j++)

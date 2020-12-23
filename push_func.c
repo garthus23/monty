@@ -42,7 +42,7 @@ void push_func(stack_t **h, unsigned int j)
 		exit(EXIT_FAILURE);
 	}
 	new = malloc(sizeof(stack_t));
-	if (new == NULL)
+	if (!new)
 	{
 		fprintf(stderr, "Error: malloc failed");
 		exit(EXIT_FAILURE);
