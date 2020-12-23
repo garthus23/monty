@@ -11,7 +11,7 @@
 int string_from_line(FILE *fptr, char **buff, char *c)
 {
 	int i = 0;
-
+	
 	while (*c != '\n')
 	{
 		(*buff)[i] = *c;
