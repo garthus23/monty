@@ -25,7 +25,8 @@ void swap_func(stack_t **h, unsigned int j)
 	}
 	else
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short", j);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", j);
+		exit(EXIT_FAILURE);
 	}
 
 }

@@ -24,7 +24,7 @@ void add_func(stack_t **h, unsigned int j)
 	}
 	else
 	{
-		fprintf(stderr, "L%d: can't add, stack too short", j);
+		fprintf(stderr, "L%d: can't add, stack too short\n", j);
 		exit(EXIT_FAILURE);
 	}
 }
