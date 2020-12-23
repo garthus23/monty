@@ -19,6 +19,9 @@ int call_opcode(stack_t **h, unsigned int j)
 		{"pint", pint_func}, {"pop", pop_func}, {"add", add_func},
 		{"nop", nop_func}, {NULL, NULL}};
 
+	if (arr[0][k] == '\0')
+		return (0);
+
 	while (cases[i].opcode)
 	{
 		while (*(cases[i].opcode) != '\0')
@@ -31,9 +34,18 @@ int call_opcode(stack_t **h, unsigned int j)
 			cases[i].opcode++;
 		}
 		if (arr[0][k] == *(cases[i].opcode))
+		{
 			cases[i].f(h, j);
+			break;
+		}
 		k = 0;
 		i++;
 	}
+	if (cases[i].opcode == NULL)
+	{
+		fprintf(stderr, "L%d: unknown instruction %s\n", j, arr[0]);
+		exit(EXIT_FAILURE);
+	}
+
 	return (0);
 }

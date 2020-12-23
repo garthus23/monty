@@ -51,6 +51,7 @@ void nop_func(stack_t **h, unsigned int j);
 int string_from_line(FILE *fptr, char **buff, char *c);
 char **string_to_array(char **arr, char *buff);
 void free_arr(char **arr);
+int free_all(char *buff, char **arr, stack_t *h);
 void free_dlistint(stack_t *head);
 
 #endif

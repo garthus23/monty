@@ -3,6 +3,23 @@
 char **arr;
 
 /**
+ * free_all - free all var malloc'ed
+ * @buff: the buffer
+ * @arr: the 2D Array
+ * @h: the doubly linked list
+ * Return: 0 when it works
+**/
+
+int free_all(char *buff, char **arr, stack_t *h)
+{
+	free(buff);
+	free_arr(arr);
+	free_dlistint(h);
+	return (0);
+}
+
+
+/**
  * string_from_line - create a string from a line in a file
  * @fptr: pointer on file
  * @buff: a buffer string
@@ -38,7 +55,6 @@ int main(int argc, char **argv)
 	stack_t *h = NULL;
 	FILE *fptr = NULL;
 
-
 	buff = malloc(sizeof(char) * 256);
 	if (argc == 2)
 	{
@@ -58,14 +74,17 @@ int main(int argc, char **argv)
 				c = fgetc(fptr);
 			}
 			fclose(fptr);
-			free(buff);
-			free_arr(arr);
-			free_dlistint(h);
+			free_all(buff, arr, h);
+		}
+		else
+		{
+			fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+			exit(EXIT_FAILURE);
 		}
 	}
 	else
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", j);
+		fprintf(stderr, "USAGE: monty file\n");
 		free(buff);
 		exit(EXIT_FAILURE);
 	}
