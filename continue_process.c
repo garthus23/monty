@@ -19,7 +19,7 @@ int continue_process(char **argv, char **buff)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
-	}	
+	}
 	fptr = fopen(argv[1], "r");
 	if (fptr != NULL)
 	{
