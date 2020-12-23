@@ -10,6 +10,7 @@
 
 int free_all(char *buff, char **arr, stack_t *h)
 {
+
 	free(buff);
 	free_arr(arr);
 	free_dlistint(h);

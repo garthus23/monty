@@ -15,9 +15,9 @@ int continue_process(char **argv, char **buff)
 	FILE *fptr = NULL;
 
 	fptr = fopen(argv[1], "r");
+	arr = malloc(sizeof(char *) * 3);
 	if (fptr != NULL)
 	{
-		arr = malloc(sizeof(char *) * 3);
 		if (!arr)
 		{
 			fprintf(stderr, "Error: malloc failed\n");

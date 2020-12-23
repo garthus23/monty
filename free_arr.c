@@ -12,9 +12,12 @@ void free_arr(char **arr)
 
 	if (arr)
 	{
-		for (i = 0; arr[i] != NULL; i++)
+		if (arr[0])
 		{
-			free(arr[i]);
+			for (i = 0; i < 2; i++)
+			{
+				free(arr[i]);
+			}
 		}
 		free(arr);
 	}
