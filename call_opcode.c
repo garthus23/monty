@@ -15,8 +15,8 @@ int call_opcode(stack_t **h, unsigned int j, FILE *fptr)
 	instruction_t cases[] = {
 		{"push", push_func}, {"pall", pall_func}, {"swap", swap_func},
 		{"pint", pint_func}, {"pop", pop_func}, {"add", add_func},
-		{"nop", nop_func}, {"sub", sub_func}, {NULL, NULL}};
-
+		{"nop", nop_func}, {"sub", sub_func}, {"div", div_func},
+		{NULL, NULL}};
 	if (arr[0][0] == '\0')
 	{
 		return (0);
@@ -47,6 +47,5 @@ int call_opcode(stack_t **h, unsigned int j, FILE *fptr)
 		pclose(fptr);
 		exit(EXIT_FAILURE);
 	}
-
 	return (0);
 }

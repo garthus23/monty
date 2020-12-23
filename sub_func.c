@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * add_func - add the top two elements
+ * sub_func - sub the top two elements
  * @h: a doubly linked list
  * @j: an index in a list
  * Return: Nothing
