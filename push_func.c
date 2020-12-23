@@ -9,11 +9,13 @@ char **arr;
 
 int push_int(void)
 {
-	int i;
+	int i = 0;
 
 	if (arr[1])
 	{
-		for (i = 0; arr[1][i] != '\0'; i++)
+		if (arr[1][0] == '-')
+			i++;
+		for (; arr[1][i] != '\0'; i++)
 		{
 			if (isdigit(arr[1][i]) == 0)
 				return (0);
