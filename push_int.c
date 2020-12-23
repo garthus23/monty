@@ -2,13 +2,12 @@
 
 /**
  * push_int - verify if there is a number to add
- * @buff: a string
  * @h: a doubly linked list
  * @j: line of the opened file
  * @fptr: pointer on open file
  * Return: 1 when there is one
 **/
-int push_int(char *buff, stack_t *h, int j, FILE *fptr)
+int push_int(stack_t *h, int j, FILE *fptr)
 {
 	int i = 0, push = 1;
 	char str[] = "push";
@@ -25,7 +24,7 @@ int push_int(char *buff, stack_t *h, int j, FILE *fptr)
 	if (push == 1 && arr[1][0] == '\0' && arr[0][0] != '\0')
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", j);
-		free_all(buff, arr, h);
+		free_all(arr, h);
 		fclose(fptr);
 		exit(EXIT_FAILURE);
 	}
@@ -40,7 +39,7 @@ int push_int(char *buff, stack_t *h, int j, FILE *fptr)
 			if (isdigit(arr[1][i]) == 0)
 			{
 				fprintf(stderr, "L%d: usage: push integer\n", j);
-				free_all(buff, arr, h);
+				free_all(arr, h);
 				fclose(fptr);
 				exit(EXIT_FAILURE);
 			}

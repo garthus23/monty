@@ -39,8 +39,8 @@ typedef struct instruction_s
 
 
 int continue_process(char **argv, char **buff);
-int call_opcode(stack_t **h, unsigned int j, char *buf, FILE *fptr);
-int push_int(char *buff, stack_t *h, int j, FILE *fptr);
+int call_opcode(stack_t **h, unsigned int j, FILE *fptr);
+int push_int(stack_t *h, int j, FILE *fptr);
 void push_func(stack_t **h, unsigned int j);
 void pall_func(stack_t **h, unsigned int j);
 void swap_func(stack_t **h, unsigned int j);
@@ -51,7 +51,7 @@ void nop_func(stack_t **h, unsigned int j);
 int string_from_line(FILE *fptr, char **buff, char *c);
 char **string_to_array(char *buff, stack_t *h, int j, FILE *fptr);
 void free_arr(char **arr);
-int free_all(char *buff, char **arr, stack_t *h);
+int free_all(char **arr, stack_t *h);
 void free_dlistint(stack_t *head);
 
 #endif

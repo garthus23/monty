@@ -37,6 +37,6 @@ char **string_to_array(char *buff, stack_t *h, int j, FILE *fptr)
 		i++;
 		token = strtok(NULL, delim);
 	}
-	push_int(buff, h, j, fptr);
+	push_int(h, j, fptr);
 	return (arr);
 }

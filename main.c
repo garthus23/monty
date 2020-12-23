@@ -9,9 +9,11 @@
 
 int main(int argc, char **argv)
 {
+	char buffer[256];
 	char *buff;
 
-	buff = malloc(sizeof(char) * 256);
+	buff = &buffer[0];
+
 	if (!buff)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -24,7 +26,6 @@ int main(int argc, char **argv)
 	else
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		free(buff);
 		exit(EXIT_FAILURE);
 	}
 	return (0);

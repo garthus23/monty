@@ -4,12 +4,11 @@
  * call_opcode - call the right function from the line
  * @h: a doubly linked list
  * @j: a line in the file
- * @buff: a string
  * @fptr: a file
  * Return: 0 when it works
 **/
 
-int call_opcode(stack_t **h, unsigned int j, char *buff, FILE *fptr)
+int call_opcode(stack_t **h, unsigned int j, FILE *fptr)
 {
 	int i = 0, k = 0;
 
@@ -44,7 +43,7 @@ int call_opcode(stack_t **h, unsigned int j, char *buff, FILE *fptr)
 	if (cases[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", j, arr[0]);
-		free_all(buff, arr, *h);
+		free_all(arr, *h);
 		pclose(fptr);
 		exit(EXIT_FAILURE);
 	}
