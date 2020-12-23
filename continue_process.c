@@ -25,7 +25,7 @@ int continue_process(char **argv, char **buff)
 	{
 		for (i = 0; i < 3; i++)
 			arr[i] = NULL;
-				c = fgetc(fptr);
+		c = fgetc(fptr);
 		while (c != EOF)
 		{
 			string_from_line(fptr, buff, &c);
@@ -42,6 +42,7 @@ int continue_process(char **argv, char **buff)
 	else
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		free(arr);
 		exit(EXIT_FAILURE);
 	}
 	return (0);
