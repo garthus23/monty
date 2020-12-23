@@ -47,6 +47,7 @@ void swap_func(stack_t **h, unsigned int j);
 void pint_func(stack_t **h, unsigned int j);
 void sub_func(stack_t **h, unsigned int j);
 void div_func(stack_t **h, unsigned int j);
+void mul_func(stack_t **h, unsigned int j);
 void pop_func(stack_t **h, unsigned int j);
 void add_func(stack_t **h, unsigned int j);
 void nop_func(stack_t **h, unsigned int j);
