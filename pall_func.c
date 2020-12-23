@@ -16,7 +16,7 @@ void pall_func(stack_t **h, unsigned int j)
 		tmp = *h;
 	else
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty", j);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", j);
 		exit(EXIT_FAILURE);
 	}
 	i = 0;

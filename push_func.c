@@ -43,8 +43,10 @@ void push_func(stack_t **h, unsigned int j)
 	}
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
-		exit(0);
-
+	{
+		fprintf(stderr, "Error: malloc failed");
+		exit(EXIT_FAILURE);
+	}
 	new->n = atoi(arr[1]);
 	if (*h != NULL)
 	{
