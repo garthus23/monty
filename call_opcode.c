@@ -4,13 +4,14 @@
  * call_opcode - call the right function from the line
  * @h: a doubly linked list
  * @j: a line in the file
+ * @buff: a string
+ * @fptr: a file
  * Return: 0 when it works
 **/
 
 int call_opcode(stack_t **h, unsigned int j, char *buff, FILE *fptr)
 {
-	int i = 0;
-	int k = 0;
+	int i = 0, k = 0;
 
 	instruction_t cases[] = {
 		{"push", push_func}, {"pall", pall_func}, {"swap", swap_func},
