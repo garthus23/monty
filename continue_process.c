@@ -14,15 +14,15 @@ int continue_process(char **argv, char **buff)
 	stack_t *h = NULL;
 	FILE *fptr = NULL;
 
-	fptr = fopen(argv[1], "r");
 	arr = malloc(sizeof(char *) * 3);
+	if (!arr)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}	
+	fptr = fopen(argv[1], "r");
 	if (fptr != NULL)
 	{
-		if (!arr)
-		{
-			fprintf(stderr, "Error: malloc failed\n");
-			exit(EXIT_FAILURE);
-		}
 		for (i = 0; i < 3; i++)
 			arr[i] = NULL;
 				c = fgetc(fptr);
@@ -34,6 +34,7 @@ int continue_process(char **argv, char **buff)
 			call_opcode(&h, j, *buff, fptr);
 			c = fgetc(fptr);
 			arr[0][0] = '\0';
+			arr[1][0] = '\0';
 		}
 		fclose(fptr);
 		free_all(*buff, arr, h);
