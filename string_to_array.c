@@ -10,7 +10,7 @@
  * Return: an array
 **/
 
-char **string_to_array(char **arr, char *buff, stack_t *h, int j, FILE *fptr)
+char **string_to_array(char *buff, stack_t *h, int j, FILE *fptr)
 {
 	int i = 0, k;
 	const char *delim = " \t\r\n\v\f";

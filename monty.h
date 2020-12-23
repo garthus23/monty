@@ -19,12 +19,10 @@ char **arr;
  */
 typedef struct stack_s
 {
-	int n;
-	struct stack_s *prev;
-	struct stack_s *next;
+        int n;
+        struct stack_s *prev;
+        struct stack_s *next;
 } stack_t;
-
-
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -35,8 +33,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+        char *opcode;
+        void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 int continue_process(char **argv, char **buff);
@@ -50,7 +48,7 @@ void pop_func(stack_t **h, unsigned int j);
 void add_func(stack_t **h, unsigned int j);
 void nop_func(stack_t **h, unsigned int j);
 int string_from_line(FILE *fptr, char **buff, char *c);
-char **string_to_array(char **arr, char *buff, stack_t *h, int j, FILE *fptr);
+char **string_to_array(char *buff, stack_t *h, int j, FILE *fptr);
 void free_arr(char **arr);
 int free_all(char *buff, char **arr, stack_t *h);
 void free_dlistint(stack_t *head);
