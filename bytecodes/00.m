@@ -1,3 +1,1 @@
-push 2
-
-pint
+push 

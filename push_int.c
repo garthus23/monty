@@ -21,7 +21,7 @@ int push_int(stack_t *h, int j, FILE *fptr)
 		}
 	}
 	i = 0;
-	if (push == 1 && arr[1][0] == '\0' && arr[0][0] != '\0')
+	if ((push == 1 && !arr[1]) || (push == 1 && arr[1][0] == '\0'))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", j);
 		free_all(arr, h);
