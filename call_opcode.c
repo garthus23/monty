@@ -15,7 +15,7 @@ int call_opcode(stack_t **h, unsigned int j, FILE *fptr)
 	instruction_t cases[] = {
 		{"push", push_func}, {"pall", pall_func}, {"swap", swap_func},
 		{"pint", pint_func}, {"pop", pop_func}, {"add", add_func},
-		{"nop", nop_func}, {NULL, NULL}};
+		{"nop", nop_func}, {"sub", sub_func}, {NULL, NULL}};
 
 	if (arr[0][0] == '\0')
 	{

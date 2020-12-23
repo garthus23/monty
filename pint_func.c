@@ -16,6 +16,7 @@ void pint_func(stack_t **h, unsigned int j)
 	else
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", j);
+		free_all(arr, *h);
 		exit(EXIT_FAILURE);
 	}
 }
