@@ -18,7 +18,6 @@ char **string_to_array(char *buff, stack_t *h, int j, FILE *fptr)
 	token = strtok(buff, delim);
 	while (token)
 	{
-		
 		if (i < 2)
 		{
 			if (arr[i])
@@ -34,7 +33,7 @@ char **string_to_array(char *buff, stack_t *h, int j, FILE *fptr)
 			for (k = 0; token[k] != '\0'; k++)
 				arr[i][k] = token[k];
 			arr[i][k] = '\0';
-		}	
+		}
 		i++;
 		token = strtok(NULL, delim);
 	}
