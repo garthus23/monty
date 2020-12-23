@@ -30,7 +30,7 @@ void pop_func(stack_t **h, unsigned int j)
 	}
 	else
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack", j);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", j);
 		exit(EXIT_FAILURE);
 	}
 }
