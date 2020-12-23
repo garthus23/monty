@@ -9,8 +9,8 @@
 
 void push_func(stack_t **h, unsigned int j)
 {
-	(void)j;
 	stack_t *new;
+	(void)j;
 
 	new = malloc(sizeof(stack_t));
 	if (!new)
