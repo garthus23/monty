@@ -31,7 +31,7 @@ int continue_process(char **argv, char **buff)
 			string_from_line(fptr, buff, &c);
 			j++;
 			string_to_array(*buff, h, j, fptr);
-			call_opcode(&h, j);
+			call_opcode(&h, j, *buff, fptr);
 			c = fgetc(fptr);
 			arr[0][0] = '\0';
 		}

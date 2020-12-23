@@ -39,7 +39,7 @@ typedef struct instruction_s
 
 
 int continue_process(char **argv, char **buff);
-int call_opcode(stack_t **h, unsigned int j);
+int call_opcode(stack_t **h, unsigned int j, char *buf, FILE *fptr);
 int push_int(char *buff, stack_t *h, int j, FILE *fptr);
 void push_func(stack_t **h, unsigned int j);
 void pall_func(stack_t **h, unsigned int j);

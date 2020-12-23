@@ -7,7 +7,7 @@
  * Return: 0 when it works
 **/
 
-int call_opcode(stack_t **h, unsigned int j)
+int call_opcode(stack_t **h, unsigned int j, char *buff, FILE *fptr)
 {
 	int i = 0;
 	int k = 0;
@@ -43,6 +43,8 @@ int call_opcode(stack_t **h, unsigned int j)
 	if (cases[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", j, arr[0]);
+		free_all(buff, arr, *h);
+		pclose(fptr);
 		exit(EXIT_FAILURE);
 	}
 
