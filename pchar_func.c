@@ -10,11 +10,23 @@
 void pchar_func(stack_t **h, unsigned int j)
 {
 	stack_t *current;
+	int c;
 
 	if (*h)
 	{
 		current = *h;
-		printf("%c\n", current->n);
+		c = current->n;
+
+		if (c >= 0 && c <= 127)
+		{
+			printf("%c\n", current->n);
+		}
+		else
+		{
+			fprintf(stderr, "L%d: can't pchar, value out of range\n", j);
+			free_all(arr, *h);
+			exit(EXIT_FAILURE);
+		}
 	}
 	else
 	{
