@@ -1,6 +1,24 @@
 #include "monty.h"
 
 /**
+ * err_call_opt - failure function to exit
+ * @h: a doubly linked list
+ * @j: a line in the file
+ * @fptr: a file
+ * Return: Nothing
+**/
+
+void err_call_opt(stack_t *h, unsigned int j, FILE *fptr)
+{
+	fprintf(stderr, "L%d: unknown instruction %s\n", j, arr[0]);
+	free_all(arr, h);
+	pclose(fptr);
+	exit(EXIT_FAILURE);
+}
+
+
+
+/**
  * call_opcode - call the right function from the line
  * @h: a doubly linked list
  * @j: a line in the file
@@ -42,10 +60,7 @@ int call_opcode(stack_t **h, unsigned int j, FILE *fptr)
 	}
 	if (cases[i].opcode == NULL)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", j, arr[0]);
-		free_all(arr, *h);
-		pclose(fptr);
-		exit(EXIT_FAILURE);
+		err_call_opt(*h, j, fptr);
 	}
 	return (0);
 }

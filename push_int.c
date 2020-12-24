@@ -47,7 +47,7 @@ int push_int(stack_t *h, int j, FILE *fptr)
 	}
 
 	i = 0;
-	if (arr[1])
+	if (arr[1] && push == 1)
 	{
 		if (arr[1][0] == '-' && isdigit(arr[1][1]) != 0)
 			i++;
