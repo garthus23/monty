@@ -18,7 +18,7 @@ void pchar_func(stack_t **h, unsigned int j)
 	}
 	else
 	{
-		fprintf(stderr, "L%d: can't pchar, value out of range\n", j);
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", j);
 		free_all(arr, *h);
 		exit(EXIT_FAILURE);
 	}
