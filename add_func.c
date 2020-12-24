@@ -23,6 +23,11 @@ void add_func(stack_t **h, unsigned int j)
 			current->next = NULL;
 			free(current);
 		}
+		else
+		{
+			fprintf(stderr, "L%d: can't add, stack too short\n", j);
+			exit(EXIT_FAILURE);
+		}
 	}
 	else
 	{
