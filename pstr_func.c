@@ -16,7 +16,7 @@ void pstr_func(stack_t **h, unsigned int j)
 	{
 		current = *h;
 
-		for (; current->next != NULL; current = current->next)
+		for (; current != NULL; current = current->next)
 		{
 			if ((current->n) > 0 && (current->n) <= 127)
 			{
@@ -24,10 +24,10 @@ void pstr_func(stack_t **h, unsigned int j)
 			}
 			else
 			{
-				printf("\n");
 				exit(0);
 			}
 		}
+		printf("\n");
 	}
 	else
 	{
