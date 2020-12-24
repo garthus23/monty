@@ -52,6 +52,7 @@ void mod_func(stack_t **h, unsigned int j);
 void pop_func(stack_t **h, unsigned int j);
 void add_func(stack_t **h, unsigned int j);
 void nop_func(stack_t **h, unsigned int j);
+void pchar_func(stack_t **h, unsigned int j);
 int string_from_line(FILE *fptr, char **buff, char *c);
 char **string_to_array(char *buff, stack_t *h, int j, FILE *fptr);
 void free_arr(char **arr);
