@@ -24,6 +24,7 @@ void pstr_func(stack_t **h, unsigned int j)
 			}
 			else
 			{
+				printf("\n");
 				exit(0);
 			}
 		}
